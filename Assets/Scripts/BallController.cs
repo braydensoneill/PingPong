@@ -11,7 +11,9 @@ public class BallController : MonoBehaviour
     public PlayerScore enemyScoreScript;
 
     private float currentDirection;
+    [SerializeField] private float initialSpeed;
     [SerializeField] private float speed;
+    [SerializeField] private float speedIncreasePerTick;
 
     private Vector3 initialPosition;
     private Quaternion initialRotation;
@@ -19,15 +21,19 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentDirection = Random.Range(0, 2);  // Return a avalue of either 0 or 1
-
         playerScoreScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScore>();
         enemyScoreScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<PlayerScore>();
+
+        gameObject.name = "Ball";               // Change name of a new ball to avoid trails of "(Clone)" in name
+        speed = initialSpeed;                   // Reset the speed to the initial speed 
+        currentDirection = Random.Range(0, 2);  // Return a avalue of either 0 or 1
     }
 
     // Update is called once per frame
     void Update()
     {
+        IncreaseSpeed(speedIncreasePerTick);
+
         if (currentDirection == (int)Direction.Left)
             transform.Translate(Vector3.left * speed * Time.deltaTime);
 
@@ -39,6 +45,11 @@ public class BallController : MonoBehaviour
     {
         initialPosition = Vector3.zero;
         initialRotation = Quaternion.Euler(Vector3.zero);
+    }
+
+    private void IncreaseSpeed(float amount)
+    {
+        speed += amount;
     }
 
     private void OnTriggerEnter(Collider other)

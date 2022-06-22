@@ -28,10 +28,6 @@ public class ScoreText : MonoBehaviour
         enemyScore = playerScoreScript.GetScore();
 
         SetScoreText();
-
-        Debug.Log("Player Score: " + playerScore);
-        Debug.Log("Enemy Score: " + enemyScore);
-
     }
 
     private void InitialiseText()
