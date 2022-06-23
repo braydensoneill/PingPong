@@ -5,40 +5,34 @@ using TMPro;
 
 public class ScoreText : MonoBehaviour
 {
-    public PlayerScore playerScoreScript;
-    public PlayerScore enemyScoreScript; 
+    //public GameObject characterObject;
+    public GameObject character;
 
     public TextMeshProUGUI scoreText;
-    private int playerScore;
-    private int enemyScore;
+    private int characterScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerScoreScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScore>();
-        enemyScoreScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<PlayerScore>();
-
+        //characterController = GetComponent<CharacterScore>();
         InitialiseText();
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerScore = playerScoreScript.GetScore();
-        enemyScore = playerScoreScript.GetScore();
-
+        characterScore = character.GetComponent<CharacterScore>().GetScore();
         SetScoreText();
     }
 
     private void InitialiseText()
     {
-        playerScore = 0;
-        enemyScore = 0;
-
-        SetScoreText();   }
+        characterScore = 0;
+        SetScoreText();   
+    }
 
     private void SetScoreText()
     {
-        scoreText.text = playerScore.ToString() + " - " + enemyScore.ToString();
+        scoreText.text = characterScore.ToString();
     }
 }

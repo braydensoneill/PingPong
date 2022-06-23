@@ -7,8 +7,8 @@ public class BallController : MonoBehaviour
     private enum Direction {Left = 0, Right = 1}
 
     public GameObject newBall;
-    public PlayerScore playerScoreScript;
-    public PlayerScore enemyScoreScript;
+    public CharacterScore playerScoreScript;
+    public CharacterScore enemyScoreScript;
 
     private float currentDirection;
     [SerializeField] private float initialSpeed;
@@ -21,8 +21,8 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerScoreScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScore>();
-        enemyScoreScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<PlayerScore>();
+        playerScoreScript = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScore>();
+        enemyScoreScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<CharacterScore>();
 
         gameObject.name = "Ball";               // Change name of a new ball to avoid trails of "(Clone)" in name
         speed = initialSpeed;                   // Reset the speed to the initial speed 
