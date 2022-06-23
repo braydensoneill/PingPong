@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8248126369866415113}
   - component: {fileID: 8248126369866415109}
   - component: {fileID: 8248126369866415114}
-  - component: {fileID: 7365135929312162089}
   m_Layer: 0
   m_Name: Character Player
   m_TagString: Player
@@ -35,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8248126369866415115
 MeshFilter:
@@ -131,15 +130,5 @@ MonoBehaviour:
   playerSpeed: 5
   keycodeUp: 119
   keycodeDown: 115
---- !u!114 &7365135929312162089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248126369866415119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 667fabaf2d7934c449c50ab794c3b1a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  zBoundaryMax: 0
+  zBoundaryMin: 0

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2805219605931416200}
   - component: {fileID: 2805219605931416244}
   - component: {fileID: 2805219605931416245}
-  - component: {fileID: 1926366284166539729}
   m_Layer: 0
   m_Name: Character Enemy
   m_TagString: Enemy
@@ -35,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2805219605931416246
 MeshFilter:
@@ -131,15 +130,5 @@ MonoBehaviour:
   playerSpeed: 5
   keycodeUp: 273
   keycodeDown: 274
---- !u!114 &1926366284166539729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2805219605931416202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 667fabaf2d7934c449c50ab794c3b1a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  zBoundaryMax: 0
+  zBoundaryMin: 0
