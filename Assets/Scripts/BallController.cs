@@ -68,7 +68,7 @@ public class BallController : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Movement();
     }
